@@ -6,6 +6,10 @@ set noswapfile " Disable creation of swap files.
 filetype plugin indent on " Set filetype detection.
 syntax on
 set autoindent
+set scrolloff=3 " Show 3 lines of context around the cursor.
+
+set tabstop=4 " Set the number of columns that a tab counts for.
+set softtabstop=4 " Set the number of columns to use when the user hits the TAB key.
 
 set number " Show line numbers.
 set visualbell
