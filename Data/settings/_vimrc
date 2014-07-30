@@ -1,8 +1,9 @@
 set nocompatible " Use the Vim defaults.
 set encoding=utf-8
 set fileencoding=utf-8
-set noswapfile " Disable creation of swap files.
-set nobackup " Set the creation of backup files (*.ext~).
+set noswapfile " Disable creation of swap files (*.ext.swp).
+set nobackup " Disable the creation of backup files (*.ext~).
+set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
 
 filetype plugin indent on " Set filetype detection.
 syntax on
@@ -14,6 +15,7 @@ set softtabstop=4 " Set the number of columns to use when the user hits the TAB 
 
 set number " Show line numbers.
 set visualbell
+set cursorline " Underline the line containing the cursor.
 colorscheme molokai
 set guifont=Consolas:h14:cANSI
 
