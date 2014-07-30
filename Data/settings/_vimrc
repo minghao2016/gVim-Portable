@@ -1,0 +1,59 @@
+set nocompatible " Use the Vim defaults.
+set encoding=utf-8
+set fileencoding=utf-8
+
+filetype plugin indent on " Set filetype detection.
+syntax on
+set autoindent
+
+set number " Show line numbers.
+set visualbell
+set cursorline " Underline the line containing the cursor.
+colorscheme molokai
+set guifont=Consolas:h14:cANSI
+
+" Turn on display of non-printable characters.
+set list
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:¤
+
+set showmatch " Automatically highlight matching parenthesis.
+set ignorecase " Turn off case-sensitivity for searches.
+set smartcase " Search will only be case-insensitive when there are no uppercase letters in the pattern. Otherwise, the search will be case-sensitive.
+set incsearch " Turn on incremental search.
+set hlsearch " Highlight search results.
+
+" Set behavior of the backspace key.
+" Backspace cannot delete out of a line or into an autoindent.
+"  start : Allow backspacing over the start of an insert.
+set backspace=start
+
+" The following was added by gVim 7.4 Portable for Windows.
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
