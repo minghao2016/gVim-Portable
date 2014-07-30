@@ -2,6 +2,7 @@ set nocompatible " Use the Vim defaults.
 set encoding=utf-8
 set fileencoding=utf-8
 set noswapfile " Disable creation of swap files.
+set nobackup " Set the creation of backup files (*.ext~).
 
 filetype plugin indent on " Set filetype detection.
 syntax on
