@@ -8,7 +8,6 @@ set autoindent
 
 set number " Show line numbers.
 set visualbell
-set cursorline " Underline the line containing the cursor.
 colorscheme molokai
 set guifont=Consolas:h14:cANSI
 
