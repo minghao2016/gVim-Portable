@@ -1,9 +1,11 @@
 set nocompatible " Use the Vim defaults.
 set encoding=utf-8
 set fileencoding=utf-8
-set noswapfile " Disable creation of swap files (*.ext.swp).
-set nobackup " Disable the creation of backup files (*.ext~).
-set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
+set backupdir=~/backupFiles " Set location to store backup files.
+set directory=~/swapFiles " Set location to store swap files.
+" set noswapfile " Disable creation of swap files (*.ext.swp).
+" set nobackup " Disable the creation of backup files (*.ext~).
+" set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
 
 filetype plugin indent on " Set filetype detection.
 syntax on
