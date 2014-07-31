@@ -7,6 +7,7 @@ set directory=~/swapFiles " Set location to store swap files.
 " set nobackup " Disable the creation of backup files (*.ext~).
 " set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
 
+set hidden " Allows switching from buffers with unsaved changes (hidden buffers).
 filetype plugin indent on " Set filetype detection.
 syntax on
 set autoindent
@@ -14,6 +15,8 @@ set scrolloff=3 " Show 3 lines of context around the cursor.
 
 set tabstop=4 " Set the number of columns that a tab counts for.
 set softtabstop=4 " Set the number of columns to use when the user hits the TAB key.
+set shiftwidth=4 " Set the number of columns defining an indent.
+set smarttab " Make the TAB key insert indents instead of tab characters.
 
 set number " Show line numbers.
 set visualbell
