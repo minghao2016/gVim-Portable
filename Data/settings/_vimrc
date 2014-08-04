@@ -1,44 +1,3 @@
-set nocompatible " Use the Vim defaults.
-set encoding=utf-8
-set fileencoding=utf-8
-set backupdir=~/backupFiles " Set location to store backup files.
-set directory=~/swapFiles " Set location to store swap files.
-" set noswapfile " Disable creation of swap files (*.ext.swp).
-" set nobackup " Disable the creation of backup files (*.ext~).
-" set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
-
-set hidden " Allows switching from buffers with unsaved changes (hidden buffers).
-filetype plugin indent on " Set filetype detection.
-syntax on
-set autoindent
-set scrolloff=3 " Show 3 lines of context around the cursor.
-
-set tabstop=4 " Set the number of columns that a tab counts for.
-set softtabstop=4 " Set the number of columns to use when the user hits the TAB key.
-set shiftwidth=4 " Set the number of columns defining an indent.
-set smarttab " Make the TAB key insert indents instead of tab characters.
-
-set number " Show line numbers.
-set visualbell
-set cursorline " Underline the line containing the cursor.
-colorscheme molokai
-set guifont=Consolas:h14:cANSI
-
-" Turn on display of non-printable characters.
-set list
-set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:¤
-
-set showmatch " Automatically highlight matching parenthesis.
-set ignorecase " Turn off case-sensitivity for searches.
-set smartcase " Search will only be case-insensitive when there are no uppercase letters in the pattern. Otherwise, the search will be case-sensitive.
-set incsearch " Turn on incremental search.
-set hlsearch " Highlight search results.
-
-" Set behavior of the backspace key.
-" Backspace cannot delete out of a line or into an autoindent.
-"  start : Allow backspacing over the start of an insert.
-set backspace=start
-
 " The following was added by gVim 7.4 Portable for Windows.
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -69,3 +28,46 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
+set nocompatible " Use the Vim defaults.
+set fileformat=unix " Use UNIX-style line terminators.
+set encoding=utf-8
+set fileencoding=utf-8
+set backupdir=~/.vim/backupFiles " Set location to store backup files.
+set directory=~/.vim/swapFiles " Set location to store swap files.
+" set noswapfile " Disable creation of swap files (*.ext.swp).
+" set nobackup " Disable the creation of backup files (*.ext~).
+" set nowritebackup " Make Vim write directly to a file without first creating a temporary file.
+
+set hidden " Allows switching from buffers with unsaved changes (hidden buffers).
+filetype plugin indent on " Set filetype detection.
+syntax on
+set autoindent
+set scrolloff=3 " Show 3 lines of context around the cursor.
+
+set tabstop=4 " Set the number of columns that a tab counts for.
+set softtabstop=4 " Set the number of columns to use when the user hits the TAB key.
+set shiftwidth=4 " Set the number of columns defining an indent.
+set smarttab " Make the TAB key insert indents instead of tab characters.
+
+set number " Show line numbers.
+set visualbell
+set cursorline " Underline or highlight the line containing the cursor.
+colorscheme molokai
+
+" Turn on display of non-printable characters.
+set list
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:¤
+
+set showmatch " Automatically highlight matching parenthesis.
+set ignorecase " Turn off case-sensitivity for searches.
+set smartcase " Search will only be case-insensitive when there are no uppercase letters in the pattern. Otherwise, the search will be case-sensitive.
+set incsearch " Turn on incremental search.
+set hlsearch " Highlight search results.
+
+" Set behavior of the backspace key.
+" Backspace cannot delete out of a line or into an autoindent.
+"  start : Allow backspacing over the start of an insert.
+set backspace=start
+
+" Settings for gVim.
+set guifont=Consolas:h12:cANSI
